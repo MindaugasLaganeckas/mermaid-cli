@@ -1,0 +1,20 @@
+stateDiagram
+	s1: Input Queue
+	s2: Function
+	s3: Function Success
+	s4: Function Fail
+	s5: Notification Queue
+	s6: Notification Queue Success
+	s7: Notification Queue Fail
+
+	[*] --> s1
+	s1 --> s2
+	s2 --> s3
+	s2 --> s4
+	s3 --> s5
+	s4 --> s5
+	s5 --> s6
+	s5 --> s7
+	s6 --> [*]
+	s7 --> s1
+    
