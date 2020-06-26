@@ -1,8 +1,8 @@
 name: Publish release
 
 on:
-  release:
-    types: [published]
+  master:
+    types: [push]
 
 jobs:
   publish:
@@ -34,7 +34,7 @@ jobs:
         yarn prepublishOnly
 
     - name: Get release version
-      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
+      run: echo ::set-env name=RELEASE_VERSION::$(echo 8.5.4)
 
     - name: Prepare release
       run: |
